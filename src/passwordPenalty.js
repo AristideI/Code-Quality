@@ -6,4 +6,28 @@
  * @returns {number}
  */
 
-export default function penaltyPoints(password = "") {}
+export default function penaltyPoints(password = "") {
+  if (!password) return 0;
+  if (typeof password !== "string") password = String(password);
+
+  let points = 0;
+  let prevChar = null;
+  let seqLength = 0;
+
+  for (let i = 0; i < password.length; i++) {
+    const currChar = password[i];
+    if (currChar === prevChar) {
+      seqLength++;
+    } else {
+      if (seqLength === 2) {
+        points++;
+      } else if (seqLength >= 3) {
+        points += 2;
+      }
+      seqLength = 1;
+    }
+    prevChar = currChar;
+  }
+
+  return points;
+}

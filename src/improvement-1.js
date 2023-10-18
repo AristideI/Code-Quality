@@ -7,8 +7,6 @@
 // FUNCTION 1
 export default function countingRobot(list) {
   let count = 0;
-  for (let i = 0; i < list.length; i++) {
-    if (list[i] === "R") count++;
-  }
+  list.split("").forEach((elt) => elt === "R" && count++);
   return count;
 }
