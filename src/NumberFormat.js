@@ -18,5 +18,3 @@ function numberFormat(number) {
 // Perfect Way
 
 const formatter = (number) => number.toLocaleString();
-
-console.log(formatter(124453534));
