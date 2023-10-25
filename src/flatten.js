@@ -4,7 +4,7 @@ function flattenArray(arr) {
 
 function getNestingDepth(arr) {
   if (!Array.isArray(arr)) return 0;
-  let maxDepth = 0;x  
+  let maxDepth = 0;
   for (let elt of arr) {
     let currentDepth = getNestingDepth(elt);
     if (currentDepth > maxDepth) {
