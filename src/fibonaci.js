@@ -6,7 +6,9 @@ function fibonaci(n) {
 function fibbonaci(n) {
   const fibArr = [0, 1];
   while (fibArr.length < n) {
-    fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 1]);
+    fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2]);
   }
   return fibArr;
 }
+
+console.log(fibbonaci(4))
